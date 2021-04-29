@@ -1,0 +1,28 @@
+/*
+  Base
+---------------------------------*/
+html{
+  font-size: 62.5%;
+
+}
+
+body{
+  width: 100%;
+  background: url(../img/bg.png) no-repeat;
+  background-size: 90%;
+  background-attachment: fixed;
+  background-position : 50% 6.3888vh;
+  font-family: $main-font-famiry;
+  color: $main-font-color;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  @include mq(md){
+    font-size: 1.2rem;
+  }
+}
+
+img{
+  max-width: 100%;
+}

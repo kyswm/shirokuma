@@ -1,0 +1,80 @@
+// -----------------------------------------------------------------
+// Setting
+// -----------------------------------------------------------------
+
+//__ メディアクエリ __
+// //min-width
+// $breakpoints: (
+//   'sm': 'screen and (min-width: 481px)',//今回使わない
+//   'md': 'screen and (min-width: 769px)',
+//   'lg': 'screen and (min-width: 1021px)',
+// ) !default;
+
+// // max-width（デスクトップファーストの場合）
+$breakpoints: (
+  'sm': 'screen and (max-width: 480px)',//今回使わない
+  'md': 'screen and (max-width: 767px)',
+  'lg': 'screen and (max-width: 1020px)',//今回使わない
+  'tab': '(min-width: 768px) and (max-width: 1200px)',//今回だけ
+) !default;
+
+@mixin mq($breakpoint: md) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+@mixin mq($breakpoint: md) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+//呼び出し @include mq(lg);
+
+
+//__ フォントサイズ __
+@mixin fontsize($size: 24, $base: 16) {
+  font-size: $size + px;
+  font-size: ($size / $base) * 1rem;
+}
+//呼び出し @include fontsize(12);
+
+$pc-font-size-lg: 5.4rem;
+$pc-font-size-md: 4rem;
+$pc-font-size-sm: 1.8rem;
+
+$sp-font-size-lg: 1.6rem;
+$sp-font-size-md: 1.2rem;
+$sp-font-size-sm: 1rem;
+
+//フォントファミリー
+$main-font-famiry: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Meiryo, メイリオ, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+$sub-font-famiry: 'Noto Sans CJK JP',"ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", "Meiryo", "verdana", sans-serif;
+$sub-font-famiry-2: 'Noto Sans CJK JP', "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", "Meiryo", "verdana", sans-serif;
+
+
+//__ カラー __
+$main-color: #3DA7E0;
+$sub-color: #1973C7;
+$sub-color-2: #FFB8B5;
+$accent-color: #E58A2D;
+
+//グレーの種類
+$non-colored-color-gray-1: #F9F9F9;
+$non-colored-color-gray-2: #B4B4B4;
+$non-colored-color-gray-3: #C5C5C5;
+
+$non-colored-color-gray-4: #9E9E9F;
+
+//ホワイトの種類
+$non-colored-color-white: #fff;
+
+//フォントカラー
+$main-font-color: #4F4F4F;
+$sub-font-color: #000000;
+
+//リンク
+$link-color: $main-color;
+
+//ホバー時
+$hover-color:rgba(219,220,220,0.4);//今のとこサイドバー
+$hover-opacity: 0.6;//暫定的

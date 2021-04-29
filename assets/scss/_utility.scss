@@ -1,0 +1,28 @@
+.u-flex{display: flex;}
+.u-visually-hidden{
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  border: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+}
+.u-positon-in{
+  position: inherit;
+}
+.u-positon-ab{
+  position: absolute;
+}
+
+.u-sp{
+  display: none;
+
+  @include mq(md){
+    display: block;
+  }
+}

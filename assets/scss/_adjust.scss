@@ -1,0 +1,317 @@
+.a-text-accent{
+  color: $sub-color
+}
+
+.a-text-smaller{
+  font-size: 66%;
+}
+
+.a-text-larger{
+  font-size: 150%
+}
+
+.a-text-border{
+  color: $non-colored-color-white;
+  text-stroke: 2px $main-font-color;
+  -webkit-text-stroke: 2px $main-font-color;
+
+  @include mq(md){
+    text-stroke: 1px $main-font-color;
+    -webkit-text-stroke: 1px $main-font-color;
+  }
+}
+
+.a-text-border-accent{
+  color: $non-colored-color-white;
+  text-stroke: 2px $sub-color;
+  -webkit-text-stroke: 2px $sub-color;
+
+  @include mq(md){
+    text-stroke: 1px $sub-color;
+    -webkit-text-stroke: 1px $sub-color;
+  }
+}
+
+.a-text-marker-center{
+  background: linear-gradient(transparent 40%, $sub-color-2 40%);
+}
+//基本的に2つの「％」は揃え、数値が低いほど太く、高いほど細くなる
+
+.a-text-marker-bottom{
+  background: linear-gradient(transparent 60%, $non-colored-color-white 60%);
+  font-weight: bold;
+}
+
+.a-text-dot {
+  padding-top: .4em;
+  background-position: top left -2px;
+  background-repeat: repeat-x;
+  background-size: 1.3em .3em;
+  background-image: radial-gradient(.15em .15em at center center,$sub-color,$sub-color 99.8%,rgba(235,78,72,0));
+}
+//丸のサイズを変更するときはradial-gradientとbackground-sizeの縦の数値を調節
+.a-text-dot-accent {
+  padding-top: .4em;
+  background-position: top left -2px;
+  background-repeat: repeat-x;
+  background-size: 1em .7em;
+  background-image: radial-gradient(.1em .1em at center center,$sub-color,$sub-color 99.8%,rgba(235,78,72,0));
+
+}
+
+.a-text-boxshadow{
+  display: inline-block;
+  background-color: $non-colored-color-white;
+  box-shadow: 7px 7px $sub-color-2;
+
+  @include mq(md){
+    box-shadow: 4px 4px $sub-color-2;
+  }
+}
+
+.a-text-family-accent{
+  font-family: $sub-font-famiry-2;
+}
+
+.a-step-convex,.a-step-convex-full{
+  position: relative;
+}
+.a-step-concave{
+  position: relative;
+}
+
+.a-step-convex::after {
+  left: 0;
+  border-left: 637px solid transparent;
+  content: '';
+  position: absolute;
+  bottom: calc(-5vw - -1px);
+  width: 0;
+  height: 0;
+  border-top: 5vw solid #D8ECF0;
+}
+
+.a-step-convex::before {
+  right: 0;
+  border-right: 637px solid transparent;
+  content: '';
+  position: absolute;
+  bottom: calc(-5vw - -1px);
+  width: 0;
+  height: 0;
+  border-top: 5vw solid #D8ECF0;
+}
+
+@media screen and (max-width: 1280px) {
+  .a-step-convex::after {
+    left: 0;
+    border-left: 50vw solid transparent;
+    content: '';
+    position: absolute;
+    bottom: calc(-5vw - -1px);
+    width: 0;
+    height: 0;
+    border-top: 5vw solid #D8ECF0;
+  }
+
+  .a-step-convex::before {
+    right: 0;
+    border-right: 50vw solid transparent;
+    content: '';
+    position: absolute;
+    bottom: calc(-5vw - -1px);
+    width: 0;
+    height: 0;
+    border-top: 5vw solid #D8ECF0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .a-step-convex::after {
+    left: 0;
+    border-left: calc(50vw - 16px) solid transparent;
+    content: '';
+    position: absolute;
+    bottom: calc(-5vw - -1px);
+    width: 0;
+    height: 0;
+    border-top: 5vw solid #D8ECF0;
+  }
+
+  .a-step-convex::before {
+    right: 0;
+    border-right: calc(50vw - 16px) solid transparent;
+    content: '';
+    position: absolute;
+    bottom: calc(-5vw - -1px);
+    width: 0;
+    height: 0;
+    border-top: 5vw solid #D8ECF0;
+  }
+}
+
+.a-step-convex-full::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 7vw 50vw 0 50vw;
+  border-color: #D8ECF0 transparent transparent transparent;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+@media screen and (max-width: 767px) {
+  .a-step-convex-full::after {
+    border-left-width: calc(50vw - 16px);
+    border-right-width: calc(50vw - 16px);
+    border-top-width: 6vh;
+    border-bottom-width: 0;
+  }
+}
+
+.a-step-concave::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 50vw 120px 50vw;
+  border-color: transparent transparent #D8ECF0 transparent;
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .a-step-concave::before {
+    border-width: 0 50vw 36px 50vw;
+  }
+}
+
+.a-step-triangle {
+  padding-top: calc(7vw - 2px);
+  position: relative;
+  max-width: 1274px;
+  margin: auto;
+  margin-top: 80px;
+}
+
+@media screen and (max-width: 767px) {
+  .a-step-triangle {
+    width: 100%;
+    margin-top: 32px;
+  }
+}
+
+.a-step-triangle:before {
+  left: 0;
+  border-right: 50vw solid transparent;
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-bottom: 7vw solid #D8ECF0;
+}
+
+@media screen and (max-width: 1280px) {
+  .a-step-triangle:before {
+    border-right: calc(73vw - 16px) solid transparent;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .a-step-triangle:before {
+    border-right: 73vw solid transparent;
+    left: 16px;
+  }
+}
+
+.a-step-triangle:after {
+  right: 0;
+  border-left: 50vw solid transparent;
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-bottom: 7vw solid #D8ECF0;
+}
+
+@media screen and (max-width: 1280px) {
+  .a-step-triangle:after {
+    border-left: 73vw solid transparent;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .a-step-triangle:after {
+    border-left: calc(73vw - 16px) solid transparent;
+    right: 16px;
+  }
+}
+
+.a-btn-hover{
+  transition: .3s ;
+}
+.a-btn-hover:hover{
+  opacity: .5;
+}
+
+.a-fadein{
+  &_left-to-right {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all .6s;
+  }
+  &_left-to-right.scrollin {
+    opacity: 1;
+    transform: translate(0);
+  }
+
+  /*下から上にフェードイン*/
+  &_down-to-top {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all .6s;
+  }
+  &_down-to-top.scrollin {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// ホバーで震える
+.a-btn-shake:hover{
+  display: inline-block;
+  animation: hurueru .5s infinite;
+
+  @include mq(tab){
+    animation: hurueru 0s ;
+  }
+  @include mq(md){
+    animation: hurueru 0s ;
+  }
+}
+
+@keyframes hurueru {
+  0% {transform: translate(0px, 0px) rotateZ(0deg)}
+  25% {transform: translate(2px, 2px) rotateZ(1deg)}
+  50% {transform: translate(0px, 2px) rotateZ(0deg)}
+  75% {transform: translate(2px, 0px) rotateZ(-1deg)}
+  100% {transform: translate(0px, 0px) rotateZ(0deg)}
+}
+
+.a-btn-change_in{
+  display: none;
+}
+
+h2#animate {
+  animation-duration: 1s; /* アニメーションの時間 */
+  animation-delay: 1s; /* アニメーション開始時間 */
+  animation-iteration-count: 1; /* アニメーションの繰り返し回数 */
+}
